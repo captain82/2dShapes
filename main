@@ -1,0 +1,224 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void circle();
+int main()
+{
+    int option,option1,option2,count = 1;
+        printf("\n1.Circle");
+        printf("\n2.Triangle");
+        printf("\n3.Rectangle");
+        printf("\nEnter your option  :  ");
+        scanf("%d" , &option);
+
+        if(option == 1)
+            circle();
+        else if(option == 2)
+            Triangle();
+        else if(option == 3)
+            Rectangle();
+
+
+}
+void circle()
+{
+    int option1;
+    printf("\n1.Radius");
+    printf("\n2.Diameter");
+    printf("\n3.Circumference");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option1);
+    if(option1 == 1)
+        Radius();
+    else if(option1 == 2)
+        diameter();
+    else if(option1 == 3)
+        circumference();
+
+}
+void Triangle()
+{
+    int option5;
+    printf("\n1.Right angle triangle.");
+    printf("\n2.Using length of three sides.");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option5);
+    if(option5 == 1)
+        RightAngle();
+    else if(option5 == 2)
+        herons();
+
+
+}
+
+void RightAngle()
+{
+    int b,h,option7;
+    printf("\nEnter the length of base and height");
+    scanf("%d %d" , &b,&h);
+    printf("\nThe area of the triangle is %f" , 0.5*b*h);
+    printf("\n1.Re-Enter length and breadth");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option7);
+    if(option7 == 1)
+        RightAngle();
+    else if(option7 == 2)
+        main();
+    else if(option7 == 3)
+        Triangle();
+    else if(option7 == 4)
+        exit(0);
+
+
+}
+
+void herons()
+{
+    int option8;
+    float s1,s2,s3,area,s;
+    printf("\nEnter the value of the three sides  :  ");
+    scanf("%f %f %f" , &s1,&s2,&s3);
+    s= (s1+s2+s3)/2;
+    area = sqrt(s*(s-s1) * (s-s2)  * (s-s3));
+    printf("\nThe area of the triangle is %f" , area);
+    printf("\n1.Re-Enter length of sides");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option8);
+    if(option8 == 1)
+        herons();
+    else if(option8 == 2)
+        main();
+    else if(option8 == 3)
+        Triangle();
+    else if(option8 == 4)
+        exit(0);
+
+
+}
+
+void Rectangle()
+{
+    int option9;
+    printf("\n1.Using length of sides");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option9);
+    if(option9 == 1)
+        sides();
+    else{
+        printf("\nEnter a valid option\n");
+        Rectangle();
+    }
+
+
+}
+
+void sides()
+{
+    int l,b,option10;
+    printf("\nEnter the sides of rectangle");
+    scanf("%d %d" , &l ,&b);
+    printf("\nThe area is %d" , l*b);
+    printf("\n1.Re-Enter sides");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :   ");
+    scanf("%d" , &option10);
+    if(option10 == 1)
+        sides();
+    else if(option10 == 2)
+        main();
+    else if(option10 == 3)
+        Rectangle();
+    else if(option10 == 4)
+        exit(0);
+
+
+
+}
+
+
+
+void Radius()
+{
+    int rad,option2;
+    float pi = 3.14;
+    printf("\nEnter the value of radius");
+    scanf("%d" , &rad);
+    printf("\nThe area of circle is %f : " , pi*rad*rad);
+    printf("\n1.Re-Enter radius");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option2);
+    if(option2 == 1)
+        Radius();
+    else if(option2 == 2)
+        main();
+    else if(option2 == 3)
+        circle();
+    else if(option2 == 4)
+        exit(0);
+
+}
+
+void diameter()
+{
+    int dmtr,option3;
+    float pi = 3.14;
+    printf("\nEnter the value of diameter");
+    scanf("%d" , &dmtr);
+    printf("\nThe area of the circle is %f" , pi*(dmtr/2)*(dmtr/2));
+    printf("\n1.Re-Enter Diameter");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option3);
+    if(option3 == 1)
+        diameter();
+    else if(option3 == 2)
+        main();
+    else if(option3 == 3)
+        circle();
+    else if(option3 == 4)
+        exit(0);
+
+}
+
+void circumference()
+{
+    int option4;
+    float crf,r;
+    float pi = 3.14;
+    printf("\nEnter the value of circumference");
+    scanf("%f" , &crf);
+    r = crf/(2*pi);
+    printf("\nThe area of circle is %f ; " , crf*(crf/(4*pi)));
+    printf("\n1.Re-Enter Circumference");
+    printf("\n2.Go back to 1st menu");
+    printf("\n3.Go back to 2nd menu");
+    printf("\n4.Exit");
+    printf("\nEnter your option  :  ");
+    scanf("%d" , &option4);
+    if(option4 == 1)
+        circumference();
+    else if(option4 == 2)
+        main();
+    else if(option4 == 3)
+        circle();
+    else if(option4 == 4)
+        exit(0);
+
+}
+
+
+
+
